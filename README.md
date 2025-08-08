@@ -189,6 +189,11 @@ Your Windows host needs the following:
 
     ![aircraft-visualization-tool](./assets/aircraft-visualization-tool.png)
 
+    *This is actually a screenshot from ADS-B Exchange, but it looks very
+    similar to how your visualization tool from the ADS-B service looks. I
+    forgot to take a screenshot of the visualization tool before packing up
+    the hardware lol.*
+
 17. DONE! You can now click around and explore the aircraft that're flying
     around in your area. It's important to note that the USB attachment to
     WSL and the ADS-B software service will need to be created again if
@@ -197,3 +202,18 @@ Your Windows host needs the following:
     upon boot (but that is outside the scope of this guide :P).
 
 [5_0]: https://www.rtl-sdr.com/rtl-sdr-quick-start-guide/
+
+## Other references
+
+- This [*Weather Model based on ADS-B*][6_0] blog post is what inspired me to
+  test this out and make this guide.
+- There are many guides on linking USB devices to WSL, but seeing the
+  flightradar24 forum user [bimmerdriver][6_1] test it out for their ADS-B
+  feeder gave me more confidence that this would work before I committed.
+- I tried a few different methods and tools for decoding ADS-B data, but the
+  [SDR Enthusiasts's ADS-B Ultrafeeder Docker image][6_2] was definitely the
+  simplest to setup and run.
+
+[6_0]: https://obrhubr.org/adsb-weather-model
+[6_1]: https://forum.flightradar24.com/forum/radar-forums/flightradar24-feeding-data-to-flightradar24/223806-how-to-set-up-a-feeder-on-windows-10-11-using-windows-subsystem-for-linux
+[6_2]: https://github.com/sdr-enthusiasts/docker-adsb-ultrafeeder
