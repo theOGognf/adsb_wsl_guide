@@ -107,18 +107,20 @@ Your Windows host needs the following:
 2. Run a PowerShell instance (or equivalent Windows shell) with admin
    privileges.
 
-3. In the shell, list the USB devices connected to your Windows host.
+3. In the shell, list the USB devices connected to your Windows host using
+   `usbipd list`.
 
    ![usbipd-list](./assets/usbipd-list-highlighted.png)
 
    Note the bus ID that corresponds to your SDR dongle, which is likely
    to be named "Bulk-In, Interface".
 
-4. Bind the SDR dongle so the state can be shared with other systems.
+4. Bind the SDR dongle using `usbipd bind` so the state can be shared with
+   other systems.
 
    ![usbipd-bind](./assets/usbipd-bind-highlighted.png)
 
-5. Attach the SDR dongle to WSL.
+5. Attach the SDR dongle to WSL using `usbipd attach`.
 
    ![usbipd-attach](./assets/usbipd-attach-highlighted.png)
 
@@ -127,12 +129,19 @@ Your Windows host needs the following:
 7. In your VS Code editor, open a view to your WSL instance by pressing
    CTRL+SHIFT+P, searching for "WSL: Connect to WSL", and hitting ENTER.
 
-8. Open an embedded terminal by pressing CTRL+` (backtick) and verify
-   that the SDR dongle is visible within WSL.
+8. Open an embedded terminal by pressing CTRL+` (backtick).
+
+9. Install the `usbutils` package if it isn't already installed.
+
+   ```bash
+   sudo apt-get install -y usbutils
+   ```
+
+10. Verify that the SDR dongle is visible within WSL using `lsusb`.
 
    ![lsusb](./assets/lsusb-highlighted.png)
 
-9. Create an ADS-B directory and download the SDR Enthusiasts's configs
+11. Create an ADS-B directory and download the SDR Enthusiasts's configs
    for running ADS-B software.
 
    ```bash
@@ -142,17 +151,17 @@ Your Windows host needs the following:
    wget https://raw.githubusercontent.com/sdr-enthusiasts/docker-adsb-ultrafeeder/main/.env
    ```
 
-10. Open the ADS-B directory in VS Code by pressing CTRL+SHIFT+P,
+12. Open the ADS-B directory in VS Code by pressing CTRL+SHIFT+P,
    searching for "WSL: Open Folder in WSL", hitting ENTER, typing in the
    path `/opt/adsb`, and hitting ENTER.
 
-11. Open the Docker Compose file and edit the `ULTRAFEEDER_CONFIG` line
+13. Open the Docker Compose file and edit the `ULTRAFEEDER_CONFIG` line
     to your preference. Personally, I leave it blank because I only
     want to view the aircraft that my own antenna can see.
 
     ![ultrafeeder-config](./assets/ultrafeeder-config-highlighted.png)
 
-12. Open the `.env` file and update the following highlighted fields.
+14. Open the `.env` file and update the following highlighted fields.
 
     ![ultrafeeder-env](./assets/ultrafeeder-env-highlighted.png)
 
@@ -165,7 +174,7 @@ Your Windows host needs the following:
     `ULTRAFEEDER_CONFIG` value), and how your feed is displayed in your
     aircraft tracking visualization tool.
 
-13. Run the ADS-B software service.
+15. Run the ADS-B software service.
 
     ```bash
     docker compose up -d
@@ -175,16 +184,16 @@ Your Windows host needs the following:
 
     ![ultrafeeder-docker-compose-up](./assets/ultrafeeder-docker-compose-up-highlighted.png)
 
-14. Open the "PORTS" tab at the bottom of your VS Code terminal to configure
+16. Open the "PORTS" tab at the bottom of your VS Code terminal to configure
     the port forwarding for the aircraft tracking visualization tool.
 
     ![port-forward-tab](./assets/port-forward-tab-highlighted.png)
 
-15. Click the "Forward a Port" button, enter "8080", and hit ENTER.
+17. Click the "Forward a Port" button, enter "8080", and hit ENTER.
 
     ![port-forward-tab-filled](./assets/port-forward-tab-filled-highlighted.png)
 
-16. CTRL+CLICK on the "localhost:8080" link and then you should see an aircraft
+18. CTRL+CLICK on the "localhost:8080" link and then you should see an aircraft
     tracking visualization pop up in your browser.
 
     ![aircraft-visualization-tool](./assets/aircraft-visualization-tool.png)
@@ -194,7 +203,7 @@ Your Windows host needs the following:
     forgot to take a screenshot of the visualization tool before packing up
     the hardware lol.*
 
-17. DONE! You can now click around and explore the aircraft that're flying
+19. DONE! You can now click around and explore the aircraft that're flying
     around in your area. It's important to note that the USB attachment to
     WSL and the ADS-B software service will need to be created again if
     you restart your Windows host machine. However, it is possible to setup
