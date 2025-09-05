@@ -191,9 +191,11 @@ Your Windows host needs the following:
 
 [5_0]: https://www.rtl-sdr.com/rtl-sdr-quick-start-guide/
 
-### Post-installation startup
+### Post-installation
 
-To run the ADS-B software service again after you've installed everything:
+To run the ADS-B software service after you've already installed everything:
+
+1. Run Docker Desktop on your Windows host.
 
 1. Run the `Start-Ultrafeeder.ps1` PowerShell script found in this repo.
 
@@ -201,6 +203,8 @@ To run the ADS-B software service again after you've installed everything:
 
 3. You should be able to click around and explore the aircraft that're flying
    aroundin your area.
+
+To stop the ADS-B software service, open Docker Desktop and stop the service.
 
 ## Other references
 
