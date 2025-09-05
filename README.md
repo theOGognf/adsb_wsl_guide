@@ -208,13 +208,13 @@ To stop the ADS-B software service, open Docker Desktop and stop the service.
 
 ## Other references
 
-- This [*Weather Model based on ADS-B*][6_0] blog post is what inspired me to
+- This [*Weather Model based on ADS-B*][7_0] blog post is what inspired me to
   test this out and make this guide.
 - There are many guides on linking USB devices to WSL, but seeing the
-  flightradar24 forum user [bimmerdriver][6_1] test it out for their ADS-B
+  flightradar24 forum user [bimmerdriver][7_1] test it out for their ADS-B
   feeder gave me more confidence that this would work before I committed.
 - I tried a few different methods and tools for decoding ADS-B data, but the
-  [SDR Enthusiasts's ADS-B Ultrafeeder Docker image][6_2] was definitely the
+  [SDR Enthusiasts's ADS-B Ultrafeeder Docker image][7_2] was definitely the
   simplest to setup and run.
 
 [7_0]: https://obrhubr.org/adsb-weather-model
