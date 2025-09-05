@@ -184,33 +184,23 @@ Your Windows host needs the following:
 
     ![ultrafeeder-docker-compose-up](./assets/ultrafeeder-docker-compose-up-highlighted.png)
 
-16. Open the "PORTS" tab at the bottom of your VS Code terminal to configure
-    the port forwarding for the aircraft tracking visualization tool.
+16. Open a browser, type in "localhost:8080" in the address bar, and hit ENTER.
 
-    ![port-forward-tab](./assets/port-forward-tab-highlighted.png)
-
-17. Click the "Forward a Port" button, enter "8080", and hit ENTER.
-
-    ![port-forward-tab-filled](./assets/port-forward-tab-filled-highlighted.png)
-
-18. CTRL+CLICK on the "localhost:8080" link and then you should see an aircraft
-    tracking visualization pop up in your browser.
-
-    ![aircraft-visualization-tool](./assets/aircraft-visualization-tool.png)
-
-    *This is actually a screenshot from ADS-B Exchange, but it looks very
-    similar to how your visualization tool from the ADS-B service looks. I
-    forgot to take a screenshot of the visualization tool before packing up
-    the hardware lol.*
-
-19. DONE! You can now click around and explore the aircraft that're flying
-    around in your area. It's important to note that the USB attachment to
-    WSL and the ADS-B software service will need to be created again if
-    you restart your Windows host machine. However, it is possible to setup
-    a task that automatically creates that attachment and starts that service
-    upon boot (but that is outside the scope of this guide :P).
+17. DONE! You should be able to click around and explore the aircraft
+    that're flying around in your area.
 
 [5_0]: https://www.rtl-sdr.com/rtl-sdr-quick-start-guide/
+
+### Post-installation startup
+
+To run the ADS-B software service again after you've installed everything:
+
+1. Run the `Start-Ultrafeeder.ps1` PowerShell script found in this repo.
+
+2. Open a browser, type in "localhost:8080" in the address bar, and hit ENTER.
+
+3. You should be able to click around and explore the aircraft that're flying
+   aroundin your area.
 
 ## Other references
 
@@ -223,6 +213,6 @@ Your Windows host needs the following:
   [SDR Enthusiasts's ADS-B Ultrafeeder Docker image][6_2] was definitely the
   simplest to setup and run.
 
-[6_0]: https://obrhubr.org/adsb-weather-model
-[6_1]: https://forum.flightradar24.com/forum/radar-forums/flightradar24-feeding-data-to-flightradar24/223806-how-to-set-up-a-feeder-on-windows-10-11-using-windows-subsystem-for-linux
-[6_2]: https://github.com/sdr-enthusiasts/docker-adsb-ultrafeeder
+[7_0]: https://obrhubr.org/adsb-weather-model
+[7_1]: https://forum.flightradar24.com/forum/radar-forums/flightradar24-feeding-data-to-flightradar24/223806-how-to-set-up-a-feeder-on-windows-10-11-using-windows-subsystem-for-linux
+[7_2]: https://github.com/sdr-enthusiasts/docker-adsb-ultrafeeder
