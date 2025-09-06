@@ -202,7 +202,7 @@ To run the ADS-B software service after you've already installed everything:
 2. Open a browser, type in "localhost:8080" in the address bar, and hit ENTER.
 
 3. You should be able to click around and explore the aircraft that're flying
-   aroundin your area.
+   around in your area.
 
 To stop the ADS-B software service, open Docker Desktop and stop the service.
 
